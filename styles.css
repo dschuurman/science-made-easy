@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background: ivory;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+.license-text {
+  color: slategray;
+  font-size: smaller;
+  font-style: italic;
+}
+
+#mySearch, #myButton {
+  border: 1px solid black;
+}
+
+#mySearch {
+  width: 30vw;
+}
+
+.resource-img {
+  height: 12pt;
+}

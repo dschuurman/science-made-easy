@@ -1,0 +1,158 @@
+<html lang="en">
+<!-- Index file for Science Made Easy education materials -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Science Made Easy</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!-- For loading the prebuilt search index. -->
+    <script src="scripts/bundle.js"></script>
+    <!-- For linking the results to the actual documents -->
+    <script type="text/javascript" src="search/index-list.js"></script>
+    <script type="text/javascript" src="scripts/genlinks.js"></script>
+</head>
+
+<body>
+    &#x25BA;&nbsp;<a href="http://10.10.10.10/index.php">Home</a>
+
+    <p>
+        <img src="science_made_easy.jpg" style="margin:20px; float:right;">
+        <h1>
+            Science Made Easy Videos
+        </h1>
+
+        The following content is part of the "Science Made Easy" DVD developed by Prof. Henry Brouwer, emeritus professor at Redeemer University. The orginal DVDs incuded additional materials and documents which included a
+        <a href="content/PM-1 Table of DVD Contents.pdf">table of contents</a>, a
+        <a href="content/PM-2  Summary of all the demos.pdf">summary of each demonstration</a>, an <a href="content/introduction.pdf">introduction<a>,
+        a <a href="content/forward.pdf">forward</a>, a table listing some <a href="content/PM-3  Common Chemicals Available Locally.pdf">common chemicals</a>, and a set of <a href="content/safety_guidelines.pdf">safety guidelines</a>.
+    </p>
+
+    <p>
+        <b>Before proceeding with any of these videos, please refer to the
+      <a href="content/safety_guidelines.pdf">Safety Guidelines</a>. It is the user's
+      responsibility to follow proper safety procedures when doing any science activity.
+      These materials are provided "as is" and without any representations or warranty of any kind and
+      rhe author is not responsible for any accidents or injuries resulting from any use of the 
+      activities described in this video series. Please enjoy science safely!</b>
+    </p>
+    
+    <ul>
+        <li>
+            <h3><a href="pages/introduction.html">Introduction</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/properties-of-matter.html">Properties of Matter</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/properties-of-water.html">Properties of Water</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/density.html">Density</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/sound.html">Sound</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/air-pressure.html">Air Pressure</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/heat.html">Heat</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/light.html">Light</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/static-electricity.html">Static Electricity</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/current-electricity.html">Current Electricity</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/magnetism.html">Magnetism</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/solutions.html">Solutions</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/chemistry.html">Chemistry</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/fluids-in-motion.html">Fluids in Motion</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/motion.html">Motion</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/forces-work-and-simple-machines.html">
+          Forces, Work, and Simple Machines</a>
+            </h3>
+        </li>
+        <li>
+            <h3><a href="pages/earth-science.html">Earth Science</a></h3>
+        </li>
+        <li>
+            <h3><a href="pages/weather.html">Weather</a></h3>
+        </li>
+    </ul>
+
+    <div id="links1"></div>
+    <script>
+        var res = genLinks(sciencemadeeasy, '..');
+        document.getElementById("links1").innerHTML = res;
+    </script>
+
+    <script>
+        // Load the prebuilt search index.
+        var idx = loadPreBuiltIndex()
+
+        // search function.
+        function search() {
+            var input = document.getElementById("mySearch").value.trim();
+            // Don't search when no input value.
+            if (input != "") {
+                result = idx.search(input);
+
+                if (result.length > 0) {
+                    var searchResults = "<ul>";
+                    // Construct a list of links from the search results.
+                    for (var i = 0; i < result.length; i++) {
+                        //var doc = library[result[i]];
+                        doc = library.find(doc => doc.file == result[i].ref);
+                        //console.log(doc);
+                        searchResults += "<li><a href=\"" + doc.file + "\">" + doc.title + "</a>  by " + doc.author;
+                        if (doc.license != "") {
+                            searchResults += "<br><small><i>" + doc.license + "</i></small>";
+                        }
+                        searchResults += "<br><small>" + doc.abstract + "</small></li>";
+                    }
+                    searchResults += "</ul>";
+                    document.getElementById("result").innerHTML = searchResults;
+                } else {
+                    document.getElementById("result").innerHTML = "No search results";
+                }
+            }
+        }
+
+        // Search on "Return" pressed.
+        document.getElementById("mySearch")
+            .addEventListener("keyup", function(event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("myButton").click();
+                }
+            });
+    </script>
+
+    <hr>
+    <p><small>
+        <img src="cc-by-nc-nd.png" style="width:100px; float:left; margin-right:20px;">
+        <p>These materials are provided "as is" and without any representations or warranty of any kind under the
+        <a href="license.txt">Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND) 4.0 International license</a>.
+        This work may be freely shared long as long as the author is credited. You may not change the any content or use it commercially without the express permission of the author.
+        These materials are to be used solely for educational purposes.
+    </small></p>
+
+</body>
+</html>

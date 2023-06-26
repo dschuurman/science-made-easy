@@ -1,0 +1,28 @@
+<!-- index.htmlf file  is the file that the ARCHIE Pi or RACHEL Pi use to
+     display your module on the front page.
+-->
+
+<div class="indexmodule">
+
+<!-- Search form - uncomment this section only if you set up search
+     functionality.
+-->
+
+<!-- <form action="<?php echo $dir ?>/search/search.php">
+<input name="query" id="<?php echo $moddir ?>_search" autocomplete="off">
+<input type="submit" value="Search">
+</form> -->
+
+
+<!-- Logo and link to your module's index.html -->
+<a href="<?php echo $dir ?>/index.html">
+<img src="<?php echo $dir ?>/science_made_easy.jpg" alt="Science Made Easy" width=150>
+</a>
+
+<!-- Title and link to your module's index.html - same as above. -->
+<h2><a href="<?php echo $dir ?>/index.html">Science Made Easy</a></h2>
+
+<!-- Description of the module -->
+<p><i>Science Made Easy</i> includes numerous science demonstration videos by Henry Brouwer.</p>
+
+</div>
