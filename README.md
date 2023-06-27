@@ -1,6 +1,7 @@
 # Science Made Easy
 Science Made Easy is a collection of demonstration videos for use in elementary school
-This series was recorded and originally released on DVD by Professor Henry Brouwer and includes approximately 300 science demonstrations and about 14 hours of video. Topics covered include:
+This series was recorded and originally released on DVD by Professor Henry Brouwer and includes approximately 300 science demonstrations and about 14 hours of video. 
+Topics covered include:
 * Properties of Matter
 * Properties of Water
 * Density
@@ -20,8 +21,9 @@ This series was recorded and originally released on DVD by Professor Henry Brouw
 * Weather
 
 # Installation
-These files have been packaged for use with the [ARCHIE Pi](https://github.com/dschuurman/archie-pi) project. It can be easily installed using the `module-installer.py` program included with the ARCHIE Pi project.
-This module requires approximately 1.6GB of free storage.
+These files have been packaged for use with the [ARCHIE Pi](https://github.com/dschuurman/archie-pi) project. 
+It can be easily installed using the `module-installer.py` program included with the ARCHIE Pi project.
+This module requires approximately 1.7GB of file storage.
 
 # License
 These materials are provided "as is" and without any representations or warranty of any kind under the
